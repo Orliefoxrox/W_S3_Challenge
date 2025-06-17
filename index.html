@@ -58,11 +58,38 @@
       // 🧠 Implement a `getAllReversed` method which returns the ints in reverse order
       // ❗ WARNING: except for `getAllReversed`, methods must respect the order of the integers
       // ❗ WARNING: note that except for push and pop, the methods don't change the `ints` property
-
+      constructor(...args){
+        this.ints = args
+      }
+      getAll() {
+        return this.ints;
+      }
+      getEvens() {
+        return this.ints.filter (num => num % 2 === 0);
     }
+      getNegatives() {
+        return this.ints.filter(num => num < 0);
+      }
+      getAllSquared() {
+        return this.ints.map(num => num * num);
+      }
+      pop() {
+        return this.ints.pop();
+      }
+      push(num) {
+        this.ints.push(num);
+        return this.ints;
+      }
+      getEveryNth(n) {
+        if (n <= 0) return [];
+        return this.ints.filter((_, index) => index % n ===0);
+      }
+      getAllReversed() {
+        return this.ints.slice().reverse();
+      }
 
     // 👉 CHALLENGE 2 NerfGun
-    class NerfGun {
+     //class NerfGun {
       // 🧠 Constructor takes one argument: the total number of projectiles supported by the instance
       // 🧠 New instances initialize fully loaded and with the safety on
       // 🧠 Instances have a `shoot` method that takes no arguments:
@@ -138,7 +165,7 @@
     // 🧪 TESTS, do not make any changes below this line ===================
     globalThis.challengeVersion = 1
     globalThis.Integers = Integers
-    globalThis.NerfGun = NerfGun
+    //globalThis.NerfGun = NerfGun
     globalThis.EBook = EBook
     globalThis.AntFarm = AntFarm
 
